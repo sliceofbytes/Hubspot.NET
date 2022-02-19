@@ -41,7 +41,7 @@ namespace HubSpot.NET.Model
         /// <param name="inputFieldDependencies">A list of dependencies between the input fields. These configure when the input fields should be visible..</param>
         /// <param name="labels">The user-facing labels for the custom action..</param>
         /// <param name="objectTypes">The object types that this custom action supports..</param>
-        public ExtensionActionDefinitionPatch(string actionUrl = default(string), bool published = default(bool), List<InputFieldDefinition> inputFields = default(List<InputFieldDefinition>), ObjectRequestOptions objectRequestOptions = default(ObjectRequestOptions), List<OneOfSingleFieldDependencyConditionalSingleFieldDependency> inputFieldDependencies = default(List<OneOfSingleFieldDependencyConditionalSingleFieldDependency>), Dictionary<string, ActionLabels> labels = default(Dictionary<string, ActionLabels>), List<string> objectTypes = default(List<string>))
+        public ExtensionActionDefinitionPatch(string actionUrl = default(string), bool published = default(bool), List<InputFieldDefinition> inputFields = default(List<InputFieldDefinition>), ObjectRequestOptions objectRequestOptions = default(ObjectRequestOptions), List<InputFieldDependency> inputFieldDependencies = default(List<InputFieldDependency>), Dictionary<string, ActionLabels> labels = default(Dictionary<string, ActionLabels>), List<string> objectTypes = default(List<string>))
         {
             this.ActionUrl = actionUrl;
             this.Published = published;
@@ -84,7 +84,7 @@ namespace HubSpot.NET.Model
         /// </summary>
         /// <value>A list of dependencies between the input fields. These configure when the input fields should be visible.</value>
         [DataMember(Name = "inputFieldDependencies", EmitDefaultValue = false)]
-        public List<OneOfSingleFieldDependencyConditionalSingleFieldDependency> InputFieldDependencies { get; set; }
+        public List<InputFieldDependency> InputFieldDependencies { get; set; }
 
         /// <summary>
         /// The user-facing labels for the custom action.

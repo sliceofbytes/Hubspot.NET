@@ -44,7 +44,7 @@ namespace HubSpot.NET.Model
         /// <param name="linkUrl">linkUrl.</param>
         /// <param name="tokens">tokens (required).</param>
         /// <param name="actions">actions (required).</param>
-        public IntegratorObjectResult(string id = default(string), string title = default(string), string linkUrl = default(string), List<ObjectToken> tokens = default(List<ObjectToken>), List<OneOfActionHookActionBodyIFrameActionBody> actions = default(List<OneOfActionHookActionBodyIFrameActionBody>))
+        public IntegratorObjectResult(string id = default(string), string title = default(string), string linkUrl = default(string), List<ObjectToken> tokens = default(List<ObjectToken>), List<IntegratorObjectAction> actions = default(List<IntegratorObjectAction>))
         {
             // to ensure "id" is required (not null)
             if (id == null) {
@@ -97,7 +97,7 @@ namespace HubSpot.NET.Model
         /// Gets or Sets Actions
         /// </summary>
         [DataMember(Name = "actions", IsRequired = true, EmitDefaultValue = false)]
-        public List<OneOfActionHookActionBodyIFrameActionBody> Actions { get; set; }
+        public List<IntegratorObjectAction> Actions { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

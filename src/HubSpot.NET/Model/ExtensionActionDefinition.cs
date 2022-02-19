@@ -23,6 +23,7 @@ using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = HubSpot.NET.Client.OpenAPIDateConverter;
 
+
 namespace HubSpot.NET.Model
 {
     /// <summary>
@@ -50,7 +51,7 @@ namespace HubSpot.NET.Model
         /// <param name="inputFieldDependencies">A list of dependencies between the input fields. These configure when the input fields should be visible..</param>
         /// <param name="labels">The user-facing labels for the custom action. (required).</param>
         /// <param name="objectTypes">The object types that this custom action supports. (required).</param>
-        public ExtensionActionDefinition(string id = default(string), string revisionId = default(string), List<ActionFunctionIdentifier> functions = default(List<ActionFunctionIdentifier>), string actionUrl = default(string), bool published = default(bool), long archivedAt = default(long), List<InputFieldDefinition> inputFields = default(List<InputFieldDefinition>), ObjectRequestOptions objectRequestOptions = default(ObjectRequestOptions), List<OneOfSingleFieldDependencyConditionalSingleFieldDependency> inputFieldDependencies = default(List<OneOfSingleFieldDependencyConditionalSingleFieldDependency>), Dictionary<string, ActionLabels> labels = default(Dictionary<string, ActionLabels>), List<string> objectTypes = default(List<string>))
+        public ExtensionActionDefinition(string id = default(string), string revisionId = default(string), List<ActionFunctionIdentifier> functions = default(List<ActionFunctionIdentifier>), string actionUrl = default(string), bool published = default(bool), long archivedAt = default(long), List<InputFieldDefinition> inputFields = default(List<InputFieldDefinition>), ObjectRequestOptions objectRequestOptions = default(ObjectRequestOptions), List<InputFieldDependency> inputFieldDependencies = default(List<InputFieldDependency>), Dictionary<string, ActionLabels> labels = default(Dictionary<string, ActionLabels>), List<string> objectTypes = default(List<string>))
         {
             // to ensure "id" is required (not null)
             if (id == null) {
@@ -152,7 +153,7 @@ namespace HubSpot.NET.Model
         /// </summary>
         /// <value>A list of dependencies between the input fields. These configure when the input fields should be visible.</value>
         [DataMember(Name = "inputFieldDependencies", EmitDefaultValue = false)]
-        public List<OneOfSingleFieldDependencyConditionalSingleFieldDependency> InputFieldDependencies { get; set; }
+        public List<InputFieldDependency> InputFieldDependencies { get; set; }
 
         /// <summary>
         /// The user-facing labels for the custom action.

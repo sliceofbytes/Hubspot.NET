@@ -42,7 +42,7 @@ namespace HubSpot.NET.Model
         /// <param name="settings">settings.</param>
         /// <param name="primary">primary.</param>
         /// <param name="secondary">secondary (required).</param>
-        public TopLevelActions(IFrameActionBody settings = default(IFrameActionBody), OneOfActionHookActionBodyIFrameActionBody primary = default(OneOfActionHookActionBodyIFrameActionBody), List<OneOfActionHookActionBodyIFrameActionBody> secondary = default(List<OneOfActionHookActionBodyIFrameActionBody>))
+        public TopLevelActions(IFrameActionBody settings = default(IFrameActionBody), IFrameActionBody primary = default(IFrameActionBody), List<IFrameActionBody> secondary = default(List<IFrameActionBody>))
         {
             // to ensure "secondary" is required (not null)
             if (secondary == null) {
@@ -63,13 +63,13 @@ namespace HubSpot.NET.Model
         /// Gets or Sets Primary
         /// </summary>
         [DataMember(Name = "primary", EmitDefaultValue = true)]
-        public OneOfActionHookActionBodyIFrameActionBody Primary { get; set; }
+        public IFrameActionBody Primary { get; set; }
 
         /// <summary>
         /// Gets or Sets Secondary
         /// </summary>
         [DataMember(Name = "secondary", IsRequired = true, EmitDefaultValue = false)]
-        public List<OneOfActionHookActionBodyIFrameActionBody> Secondary { get; set; }
+        public List<IFrameActionBody> Secondary { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
